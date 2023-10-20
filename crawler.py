@@ -30,8 +30,13 @@ opts.add_argument('--disable-gpu')
 opts.add_experimental_option('excludeSwitches',['enable-logging'])
 opts.add_argument('--log-level=3')
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+
 # set up the webdriver
-driver = webdriver.Chrome(options=opts)
+#driver = webdriver.Chrome(options=chrome_options)
 
 # Helper method to convert numbers
 def num_convert(s) -> int:
